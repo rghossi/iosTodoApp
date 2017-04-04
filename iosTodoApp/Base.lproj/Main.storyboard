@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l8b-re-bWN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7wq-Xc-RRb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--My Todo List-->
         <scene sceneID="zQ1-Qs-IzC">
             <objects>
                 <tableViewController id="l8b-re-bWN" sceneMemberID="viewController">
@@ -62,15 +62,22 @@
                             <outlet property="delegate" destination="l8b-re-bWN" id="Amw-8w-ucv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="My Todo List" id="fG4-c6-g84">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="95k-4x-KoD">
+                            <connections>
+                                <segue destination="IPw-qB-Q5N" kind="showDetail" id="dec-sX-Dy7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0P-Mf-eZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-640" y="124"/>
+            <point key="canvasLocation" x="298.39999999999998" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Todo Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iosTodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddTodoViewController" customModule="iosTodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -80,19 +87,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-ym-Cc9">
-                                <rect key="frame" x="16" y="147" width="343" height="30"/>
+                                <rect key="frame" x="16" y="191" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-Cy-Y3w">
-                                <rect key="frame" x="151" y="238" width="72" height="21"/>
+                                <rect key="frame" x="151" y="282" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-Jk-qqv">
-                                <rect key="frame" x="0.0" y="267" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="311" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="513032564.86882299">
                                     <!--2017-04-04 21:02:44 +0000-->
                                 </date>
@@ -110,10 +117,50 @@
                             <constraint firstAttribute="leadingMargin" secondItem="j0Y-ym-Cc9" secondAttribute="leading" id="wKk-Lo-bbw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Todo Item" id="mcF-wp-drh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fXi-tG-iSk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="E14-UB-gej"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1996" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hy4-Uk-2wM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7wq-Xc-RRb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iXH-XR-pu2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="l8b-re-bWN" kind="relationship" relationship="rootViewController" id="JEJ-Qk-3Xs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSI-Ck-cyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-640.79999999999995" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="731-Hw-gH6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IPw-qB-Q5N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SL7-ld-oY4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ebo-WR-xaV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZj-oq-yWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="124"/>
         </scene>
     </scenes>
 </document>
