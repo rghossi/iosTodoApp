@@ -12,6 +12,7 @@
 		CD3ED3361E943F2C00476A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3ED3341E943F2C00476A7C /* Main.storyboard */; };
 		CD3ED3381E943F2C00476A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3ED3371E943F2C00476A7C /* Assets.xcassets */; };
 		CD3ED33B1E943F2C00476A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3ED3391E943F2C00476A7C /* LaunchScreen.storyboard */; };
+		CD3ED3431E94481300476A7C /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CD3ED3371E943F2C00476A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD3ED33A1E943F2C00476A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD3ED33C1E943F2C00476A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				CD3ED3301E943F2C00476A7C /* AppDelegate.swift */,
 				CD3ED3321E943F2C00476A7C /* AddTodoViewController.swift */,
 				CD3ED3341E943F2C00476A7C /* Main.storyboard */,
+				CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */,
 				CD3ED3371E943F2C00476A7C /* Assets.xcassets */,
 				CD3ED3391E943F2C00476A7C /* LaunchScreen.storyboard */,
 				CD3ED33C1E943F2C00476A7C /* Info.plist */,
@@ -138,6 +141,7 @@
 			files = (
 				CD3ED3331E943F2C00476A7C /* AddTodoViewController.swift in Sources */,
 				CD3ED3311E943F2C00476A7C /* AppDelegate.swift in Sources */,
+				CD3ED3431E94481300476A7C /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
