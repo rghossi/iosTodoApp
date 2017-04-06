@@ -15,7 +15,27 @@
 		CD3ED3431E94481300476A7C /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */; };
 		CD3ED3451E944F9800476A7C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3441E944F9800476A7C /* Realm.framework */; };
 		CD3ED3471E944FA200476A7C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3461E944FA200476A7C /* RealmSwift.framework */; };
+		CD3ED3491E9453FA00476A7C /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3ED3481E9453FA00476A7C /* Todo.swift */; };
+		CD3ED34A1E945C2E00476A7C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3461E944FA200476A7C /* RealmSwift.framework */; };
+		CD3ED34B1E945C2E00476A7C /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3461E944FA200476A7C /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD3ED34D1E945C3200476A7C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3441E944F9800476A7C /* Realm.framework */; };
+		CD3ED34E1E945C3200476A7C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3ED3441E944F9800476A7C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD3ED34C1E945C2E00476A7C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD3ED34E1E945C3200476A7C /* Realm.framework in Embed Frameworks */,
+				CD3ED34B1E945C2E00476A7C /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CD3ED32D1E943F2C00476A7C /* iosTodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +48,7 @@
 		CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
 		CD3ED3441E944F9800476A7C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		CD3ED3461E944FA200476A7C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		CD3ED3481E9453FA00476A7C /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +56,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3ED34D1E945C3200476A7C /* Realm.framework in Frameworks */,
 				CD3ED3471E944FA200476A7C /* RealmSwift.framework in Frameworks */,
 				CD3ED3451E944F9800476A7C /* Realm.framework in Frameworks */,
+				CD3ED34A1E945C2E00476A7C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +89,7 @@
 				CD3ED3441E944F9800476A7C /* Realm.framework */,
 				CD3ED3301E943F2C00476A7C /* AppDelegate.swift */,
 				CD3ED3321E943F2C00476A7C /* AddTodoViewController.swift */,
+				CD3ED3481E9453FA00476A7C /* Todo.swift */,
 				CD3ED3341E943F2C00476A7C /* Main.storyboard */,
 				CD3ED3421E94481300476A7C /* TodoListTableViewController.swift */,
 				CD3ED3371E943F2C00476A7C /* Assets.xcassets */,
@@ -85,6 +109,7 @@
 				CD3ED3291E943F2C00476A7C /* Sources */,
 				CD3ED32A1E943F2C00476A7C /* Frameworks */,
 				CD3ED32B1E943F2C00476A7C /* Resources */,
+				CD3ED34C1E945C2E00476A7C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +175,7 @@
 				CD3ED3331E943F2C00476A7C /* AddTodoViewController.swift in Sources */,
 				CD3ED3311E943F2C00476A7C /* AppDelegate.swift in Sources */,
 				CD3ED3431E94481300476A7C /* TodoListTableViewController.swift in Sources */,
+				CD3ED3491E9453FA00476A7C /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

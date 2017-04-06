@@ -25,11 +25,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nfM-5b-bvP" id="hbk-uW-MiJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bK5-CK-Ek5">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vvv-5C-TPJ" id="2QQ-ZE-mr6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3N2-El-iW8" id="7MN-3I-Wnq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" title="My Todo List" id="fG4-c6-g84">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="95k-4x-KoD">
                             <connections>
-                                <segue destination="IPw-qB-Q5N" kind="showDetail" id="dec-sX-Dy7"/>
+                                <segue destination="IPw-qB-Q5N" kind="show" action="showDetailViewController:sender:" id="R2c-8d-aKG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -118,9 +118,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Todo Item" id="mcF-wp-drh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fXi-tG-iSk"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="E14-UB-gej"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fXi-tG-iSk">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="TRq-3s-EPz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="E14-UB-gej">
+                            <connections>
+                                <action selector="saveTodo:" destination="BYZ-38-t0r" id="AVC-dd-0tF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="zRJ-Jk-qqv" id="oK0-Cy-9iv"/>
+                        <outlet property="saveButton" destination="E14-UB-gej" id="bUa-Ns-ORB"/>
+                        <outlet property="todoTitleTextField" destination="j0Y-ym-Cc9" id="aKR-2c-qa9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
