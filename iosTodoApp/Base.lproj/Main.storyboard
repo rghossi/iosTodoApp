@@ -68,23 +68,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-ym-Cc9">
-                                <rect key="frame" x="16" y="191" width="343" height="30"/>
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-Cy-Y3w">
-                                <rect key="frame" x="151" y="282" width="72" height="21"/>
+                                <rect key="frame" x="151" y="188" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-Jk-qqv">
-                                <rect key="frame" x="0.0" y="311" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="217" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="513032564.86882299">
                                     <!--2017-04-04 21:02:44 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E77-gx-XdU">
+                                <rect key="frame" x="166" y="467" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="i1c-4L-xQ9">
+                                <rect key="frame" x="14" y="496" width="347" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -92,7 +103,7 @@
                             <constraint firstItem="j0Y-ym-Cc9" firstAttribute="centerX" secondItem="zRJ-Jk-qqv" secondAttribute="centerX" id="9ci-RQ-Cux"/>
                             <constraint firstItem="zRJ-Jk-qqv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G30-oz-3DY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j0Y-ym-Cc9" secondAttribute="trailing" id="HCR-ID-MEs"/>
-                            <constraint firstItem="j0Y-ym-Cc9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="127" id="i7S-8g-inN"/>
+                            <constraint firstItem="j0Y-ym-Cc9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="i7S-8g-inN"/>
                             <constraint firstItem="j0Y-ym-Cc9" firstAttribute="centerX" secondItem="kZi-Cy-Y3w" secondAttribute="centerX" id="npK-Rr-NsS"/>
                             <constraint firstItem="kZi-Cy-Y3w" firstAttribute="top" secondItem="j0Y-ym-Cc9" secondAttribute="bottom" constant="61" id="vrC-wE-s8S"/>
                             <constraint firstAttribute="leadingMargin" secondItem="j0Y-ym-Cc9" secondAttribute="leading" id="wKk-Lo-bbw"/>
@@ -112,6 +123,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dueDatePicker" destination="zRJ-Jk-qqv" id="oK0-Cy-9iv"/>
+                        <outlet property="prioritySlider" destination="i1c-4L-xQ9" id="jWk-Ls-X4l"/>
                         <outlet property="saveButton" destination="E14-UB-gej" id="bUa-Ns-ORB"/>
                         <outlet property="todoTitleTextField" destination="j0Y-ym-Cc9" id="aKR-2c-qa9"/>
                     </connections>

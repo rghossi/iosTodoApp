@@ -12,4 +12,5 @@ import RealmSwift
 class Todo: Object {
     dynamic var title = ""
     dynamic var dueDate = Date()
+    dynamic var priority = 50
 }

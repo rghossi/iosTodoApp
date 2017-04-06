@@ -14,6 +14,7 @@ class AddTodoViewController: UIViewController {
     @IBOutlet weak var todoTitleTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var prioritySlider: UISlider!
     
     var todo: Todo?
     
@@ -25,6 +26,7 @@ class AddTodoViewController: UIViewController {
         todo = Todo()
         todo?.title = todoTitleTextField.text ?? ""
         todo?.dueDate = dueDatePicker.date
+        todo?.priority = Int(self.prioritySlider.value)
         
         let realm = try! Realm()
         try! realm.write {
