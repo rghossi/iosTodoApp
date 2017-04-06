@@ -12,11 +12,23 @@ import RealmSwift
 class TodoListTableViewController: UITableViewController {
     
     let realm = try! Realm()
-    let todoList = try! Realm().objects(Todo.self)
+    var todoList: Results<Todo>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        readTodosAndUpdateUI()
+    }
+    
+    func readTodosAndUpdateUI() {
+        todoList = realm.objects(Todo.self)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
