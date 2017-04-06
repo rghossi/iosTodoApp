@@ -48,7 +48,19 @@ class TodoListTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         
-        cell.textLabel?.text = "[\(todoList[indexPath.row].priority)][\(formatter.string(from: todoList[indexPath.row].dueDate))] \(todoList[indexPath.row].title)"
+        let priority = "[\(todoList[indexPath.row].priority)]"
+        let date = "[\(formatter.string(from: todoList[indexPath.row].dueDate))]"
+        let title = todoList[indexPath.row].title
+        let cellText = "\(priority) \(date) \(title)"
+        
+        let priorityRange = (cellText as NSString).range(of: priority)
+        let dateRange = (cellText as NSString).range(of: date)
+        
+        let attributedString = NSMutableAttributedString(string:cellText)
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red , range: priorityRange)
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue , range: dateRange)
+        
+        cell.textLabel?.attributedText = attributedString
 
         return cell
     }
