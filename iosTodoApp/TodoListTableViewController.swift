@@ -38,14 +38,17 @@ class TodoListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return todoList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
-
-        cell.textLabel?.text = self.todoList[indexPath.row].title
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        cell.textLabel?.text = "[\(formatter.string(from: todoList[indexPath.row].dueDate))] \(todoList[indexPath.row].title)"
 
         return cell
     }
