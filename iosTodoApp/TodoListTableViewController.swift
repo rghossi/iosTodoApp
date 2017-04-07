@@ -80,7 +80,10 @@ class TodoListTableViewController: UITableViewController, UISearchBarDelegate {
 
         return cell
     }
- 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editTodoSegue", sender: indexPath.row)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -117,15 +120,21 @@ class TodoListTableViewController: UITableViewController, UISearchBarDelegate {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if  segue.identifier == "editTodoSegue",
+            let destination = segue.destination as? UINavigationController,
+            let todoIndex = tableView.indexPathForSelectedRow?.row {
+            let targetController = destination.topViewController as? AddTodoViewController
+            targetController?.todo = todoList[todoIndex]
+        }
     }
-    */
+    
     
     //MARK: - Actions
     

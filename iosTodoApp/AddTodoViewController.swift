@@ -21,17 +21,35 @@ class AddTodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (todo != nil) {
+            todoTitleTextField.text = todo?.title
+            dueDatePicker.date = (todo?.dueDate)!
+            prioritySlider.value = Float((todo?.priority)!)
+        }
+    }
 
     @IBAction func saveTodo(_ sender: UIBarButtonItem) {
-        todo = Todo()
-        todo?.title = todoTitleTextField.text ?? ""
-        todo?.dueDate = dueDatePicker.date
-        todo?.priority = Int(self.prioritySlider.value)
-        
         let realm = try! Realm()
-        try! realm.write {
-            realm.add(todo!)
-            dismiss(animated: true, completion: nil)
+        if (todo != nil) {
+            try! realm.write {
+                todo?.title = todoTitleTextField.text!
+                todo?.dueDate = dueDatePicker.date
+                todo?.priority = Int(self.prioritySlider.value)
+                dismiss(animated: true, completion: nil)
+            }
+        } else {
+            todo = Todo()
+            todo?.title = todoTitleTextField.text ?? ""
+            todo?.dueDate = dueDatePicker.date
+            todo?.priority = Int(self.prioritySlider.value)
+            
+            try! realm.write {
+                realm.add(todo!)
+                dismiss(animated: true, completion: nil)
+            }
         }
     }
     

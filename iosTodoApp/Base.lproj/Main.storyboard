@@ -70,6 +70,7 @@
                     <connections>
                         <outlet property="searchBar" destination="aNK-va-G4H" id="rVY-sH-HfJ"/>
                         <outlet property="segmentedControl" destination="bJp-q8-Vrn" id="Jso-Is-dX5"/>
+                        <segue destination="IPw-qB-Q5N" kind="show" identifier="editTodoSegue" id="4Vk-SW-dEp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0P-Mf-eZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,4 +191,7 @@
             <point key="canvasLocation" x="1148" y="124"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Vk-SW-dEp"/>
+    </inferredMetricsTieBreakers>
 </document>
