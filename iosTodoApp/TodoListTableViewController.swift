@@ -110,5 +110,18 @@ class TodoListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Actions
+    
+    @IBAction func sort(_ sender: UISegmentedControl) {
+        var sortBy = "priority"
+        
+        if sender.selectedSegmentIndex == 1 {
+            sortBy = "dueDate"
+        }
+        
+        todoList = realm.objects(Todo.self).sorted(byKeyPath: sortBy)
+        tableView.reloadData()
+    }
 
 }
