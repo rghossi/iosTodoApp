@@ -9,14 +9,18 @@
 import UIKit
 import RealmSwift
 
-class TodoListTableViewController: UITableViewController {
+class TodoListTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let realm = try! Realm()
     var todoList: Results<Todo>!
+    var searchText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
 
     }
@@ -24,6 +28,18 @@ class TodoListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         readTodosAndUpdateUI()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let index  = segmentedControl.selectedSegmentIndex
+        var sortBy = "priority"
+        if index == 1 {
+            sortBy = "dueDate"
+        }
+        todoList = realm.objects(Todo.self).filter("title CONTAINS '\(searchText)'").sorted(byKeyPath: sortBy)
+
+        self.searchText = searchText
+        tableView.reloadData()
     }
     
     func readTodosAndUpdateUI() {
@@ -120,7 +136,7 @@ class TodoListTableViewController: UITableViewController {
             sortBy = "dueDate"
         }
         
-        todoList = realm.objects(Todo.self).sorted(byKeyPath: sortBy)
+        todoList = realm.objects(Todo.self).filter("title CONTAINS '\(searchText)'").sorted(byKeyPath: sortBy)
         tableView.reloadData()
     }
 

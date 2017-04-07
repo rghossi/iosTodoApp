@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Todo List-->
+        <!--Todo List Table View Controller-->
         <scene sceneID="zQ1-Qs-IzC">
             <objects>
                 <tableViewController id="l8b-re-bWN" customClass="TodoListTableViewController" customModule="iosTodoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,20 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="FL2-gl-g4Z">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Priority"/>
-                                <segment title="Date"/>
-                            </segments>
-                            <connections>
-                                <action selector="sort:" destination="l8b-re-bWN" eventType="valueChanged" id="07N-To-5rH"/>
-                            </connections>
-                        </segmentedControl>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="aNK-va-G4H">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7Ko-91-8Tc" style="IBUITableViewCellStyleDefault" id="rGz-cv-Rkb">
-                                <rect key="frame" x="0.0" y="58" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGz-cv-Rkb" id="mLW-eR-Jiy">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -54,13 +48,29 @@
                             <outlet property="delegate" destination="l8b-re-bWN" id="Amw-8w-ucv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Todo List" id="fG4-c6-g84">
+                    <navigationItem key="navigationItem" id="fG4-c6-g84">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="bJp-q8-Vrn">
+                            <rect key="frame" x="8" y="7" width="318" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Priority"/>
+                                <segment title="Date"/>
+                            </segments>
+                            <connections>
+                                <action selector="sort:" destination="l8b-re-bWN" eventType="valueChanged" id="FN4-jA-nbf"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="95k-4x-KoD">
                             <connections>
                                 <segue destination="IPw-qB-Q5N" kind="show" action="showDetailViewController:sender:" id="R2c-8d-aKG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="aNK-va-G4H" id="rVY-sH-HfJ"/>
+                        <outlet property="segmentedControl" destination="bJp-q8-Vrn" id="Jso-Is-dX5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0P-Mf-eZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
